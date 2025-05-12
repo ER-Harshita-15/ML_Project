@@ -8,9 +8,9 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
-from scr.logger import logging
-from scr.exception import CustomerException
-from scr.utils import save_object
+from src.logger import logging
+from src.exception import CustomException
+from src.utils import save_object
 import os
 
 class DataTransformationConfig:
@@ -58,7 +58,7 @@ class DataTransformation:
             return preprocessor
         
         except Exception as e:
-            raise CustomerException(e,sys)
+            raise CustomException(e,sys)
         
     def initiate_data_transformation(self,train_path,test_path):
         try:
@@ -109,4 +109,4 @@ class DataTransformation:
 
 
         except Exception as e:
-            raise CustomerException(e,sys)
+            raise CustomException(e,sys)

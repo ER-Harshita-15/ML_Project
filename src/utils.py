@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import dill 
 
-from scr.exception import CustomerException
+from src.exception import CustomException
 
 def save_object(file_path,obj):
     try:
@@ -18,4 +18,4 @@ def save_object(file_path,obj):
             dill.dump(obj,file_obj)
 
     except Exception as e:
-        raise CustomerException(e,sys)
+        raise CustomException(e,sys)
